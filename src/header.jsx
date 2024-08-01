@@ -145,7 +145,7 @@ const SlidingHeading = styled.h1`
   color: white;
   margin-bottom: 20px;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   color: silver;
@@ -210,7 +210,7 @@ const styles = {
     fontWeight: 'normal',
     color: 'lightblue',
     fontFamily: 'Coneria',
-    fontSize: '16px'
+    fontSize: '14px'
   },
   logo: {
     width: '200px',
