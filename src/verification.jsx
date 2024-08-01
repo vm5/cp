@@ -93,7 +93,7 @@ const VerificationWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  gap: 160px;
+  gap: 250px;
   @media (max-width: 768px) {
     gap: 20px;
   }
