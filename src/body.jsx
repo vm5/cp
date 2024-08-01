@@ -17,6 +17,7 @@ const DummyAlumni = [
   { company: 'Mercedes Benz Research and Development', designation: 'Data Engineer' },
   { company: 'PwC', designation: 'Associate' },
   { company: 'Paypal', designation: 'Target Corporation' },
+  { company: 'GE', designation: 'Software Dvelopment Engineer' },
   { company: 'Allo Health', designation: 'Software Development Engineer' },
   { company: 'GSK', designation: 'Software Development Engineer' },
   { company: 'Autodesk', designation: 'Software Development Engineer' },
@@ -42,8 +43,11 @@ const DummyAlumni = [
   { company: 'TruckX', designation: 'Senior Software Dvelopment Engineer' },
   { company: 'IBM', designation: 'Software Dvelopment Engineer' },
   { company: 'Universal automation solutions private limited', designation: 'Software Dvelopment Engineer' },
+  { company: 'Reliance', designation: 'Software Dvelopment Engineer' },
+  { company: 'Tesco', designation: 'Software Dvelopment Engineer' },
+  { company: 'Mercedes Benz Research and Development ', designation: 'Software Dvelopment Engineer' },
+  { company: 'Via Play Group', designation: 'Data Engineer' },
 ];
-
 const Body = () => {
   const [company, setCompany] = useState('');
   const [searchType, setSearchType] = useState('learn');
@@ -55,20 +59,18 @@ const Body = () => {
     if (redirectLink) {
       window.location.href = redirectLink;
     }
-  }, [redirectLink])
+  }, [redirectLink]);
 
   const handleSearch = () => {
     const foundAlumni = DummyAlumni.filter(alumnus => alumnus.company.toLowerCase() === company.toLowerCase());
 
-    
     if (foundAlumni.length > 0) {
-      // Determine the link based on the selected radio button
       const links = {
         learn: 'https://chatpeslinkedform.vercel.app/',
-        prepare: 'https://connectpesform.vercel.app/',
+        prepare: 'https://connectpesinterview.vercel.app/',
       };
 
-      setRedirectLink(links[searchType] || '');  // Set the appropriate link
+      setRedirectLink(links[searchType] || '');
       setMessage('');
     } else {
       setRedirectLink('');
@@ -168,13 +170,13 @@ const styles = {
     borderRadius: '0.75rem',
     boxShadow: '0 0.5rem 1rem rgba(0, 0, 0, 0.1)',
     width: '100%',
-    maxWidth: '1200px', // Set a max-width for large screens
-    margin: '0 auto', // Center the section
+    maxWidth: '1200px',
+    margin: '0 auto',
     textAlign: 'center',
     fontFamily: 'Coneria',
     boxSizing: 'border-box',
     transition: 'transform 0.3s ease-in-out',
-    minHeight: '300px', // Ensure a minimum height for better appearance
+    minHeight: '300px',
   },
   heading: {
     fontWeight: 'bold',
@@ -301,91 +303,57 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     marginLeft: '0.5rem',
-    width: '1.875rem',
-    height: '1.875rem',
+    width: '1.25rem',
+    height: '1.25rem',
     borderRadius: '50%',
     backgroundColor: '#007BFF',
     color: '#ffffff',
-    fontSize: '1rem',
+    fontSize: '0.75rem',
     fontWeight: 'bold',
+    fontFamily: 'Coneria',
+  },
+  image: {
+    width: '100%',
+    height: 'auto',
+    borderRadius: '0.5rem',
+    boxShadow: '0 0.5rem 1rem rgba(0, 0, 0, 0.1)',
+    margin: '1.25rem 0',
+  },
+  '@media (max-width: 768px)': {
+    searchSection: {
+      padding: '1rem',
+    },
+    heading: {
+      fontSize: '1.5rem',
+    },
+    radioGroup: {
+      fontSize: '0.875rem',
+    },
+    input: {
+      fontSize: '0.875rem',
+      padding: '0.5rem',
+    },
+    button: {
+      fontSize: '0.875rem',
+      padding: '0.5rem 1rem',
+    },
+    message: {
+      fontSize: '1rem',
+    },
+    textContainer: {
+      fontSize: '0.875rem',
+      padding: '1rem',
+    },
+    companyHeading: {
+      fontSize: '1.25rem',
+    },
+    companyList: {
+      gap: '0.5rem',
+    },
+    companyContainer: {
+      fontSize: '1rem',
+    },
   },
 };
-
-// Apply media queries to adjust styles for different screen sizes
-const mediaQueries = `
-  @media (max-width: 768px) {
-    .container {
-      padding: 1rem;
-    }
-    .searchSection {
-      padding: 1rem;
-    }
-    .heading {
-      fontSize: 1.5rem;
-    }
-    .input {
-      fontSize: 0.875rem;
-    }
-    .button {
-      fontSize: 0.875rem;
-    }
-    .message {
-      fontSize: 1rem;
-    }
-    .radioGroup {
-      fontSize: 0.875rem;
-    }
-    .textContainer {
-      margin: 0.5rem;
-      fontSize: 0.875rem;
-    }
-    .companyHeading {
-      fontSize: 1.25rem;
-    }
-    .companyContainer {
-      fontSize: 1rem;
-    }
-    .circle {
-      fontSize: 0.875rem;
-    }
-  }
-  @media (max-width: 480px) {
-    .searchSection {
-      padding: 0.5rem;
-    }
-    .heading {
-      fontSize: 1.25rem;
-    }
-    .input {
-      fontSize: 0.75rem;
-    }
-    .button {
-      fontSize: 0.75rem;
-    }
-    .message {
-      fontSize: 0.875rem;
-    }
-    .radioGroup {
-      fontSize: 0.75rem;
-    }
-    .textContainer {
-      fontSize: 0.75rem;
-    }
-    .companyHeading {
-      fontSize: 1rem;
-    }
-    .companyContainer {
-      fontSize: 0.875rem;
-    }
-    .circle {
-      fontSize: 0.75rem;
-    }
-  }
-`;
-
-// Inject media queries into the document
-const styleElement = document.createElement('style');
-styleElement.textContent = mediaQueries;
-document.head.appendChild(styleElement);
 
 export default Body;
