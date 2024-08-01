@@ -10,7 +10,7 @@ function Verification({ onVerify }) {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      if ((srns.length === 13 || srns.length === 14)  &&  srns.startsWith("PES") && srns.includes("UG")) {
+      if ((srns.length === 13 || srns.length === 14) && srns.startsWith("PES") && srns.includes("UG")) {
         onVerify();
       } else {
         alert('Please provide a valid SRN');
@@ -23,7 +23,7 @@ function Verification({ onVerify }) {
     setTimeout(() => {
       setIsLoading(false);
       if (alumniCode === 'pes') {
-        window.location.href='https://connectpesalumni.vercel.app/';
+        window.location.href = 'https://connectpesalumni.vercel.app/';
       } else {
         alert('Please provide a valid alumni code');
       }
@@ -83,9 +83,10 @@ const PageContainer = styled.div`
   justify-content: center;
   min-height: 100vh;
   background: linear-gradient(to bottom right, #FF6F00, #003366);
-  padding:20px;
+  padding: 20px;
   margin: 0;
   box-sizing: border-box;
+  width: 100%;
 `;
 
 const VerificationWrapper = styled.div`
@@ -93,7 +94,7 @@ const VerificationWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  gap: 250px;
+  gap: 50px;
   @media (max-width: 768px) {
     gap: 20px;
   }
@@ -112,6 +113,7 @@ const VerificationContainer = styled.div`
   width: 100%;
   max-width: 400px;
   box-sizing: border-box;
+  margin: 10px;
 
   @media (max-width: 768px) {
     padding: 15px;
@@ -145,7 +147,7 @@ const Description = styled.p`
 const Input = styled.input`
   margin-bottom: 20px;
   padding: 10px;
-  width: 80%;
+  width: 100%;
   border: 2px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
@@ -154,10 +156,6 @@ const Input = styled.input`
   &:focus {
     border-color: #333;
     outline: none;
-  }
-
-  @media (max-width: 480px) {
-    width: 90%;
   }
 `;
 
@@ -173,10 +171,6 @@ const Button = styled.button`
 
   &:hover {
     background-color: #555;
-  }
-
-  @media (max-width: 480px) {
-    width: 90%;
   }
 `;
 
