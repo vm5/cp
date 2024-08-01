@@ -10,7 +10,7 @@ function Verification({ onVerify }) {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      if (srns.startsWith("PES") && srns.length === 13 && srns.includes("UG")) {
+      if ((srns.length === 13 || srns.length === 14)  &&  srns.startsWith("PES") && srns.includes("UG")) {
         onVerify();
       } else {
         alert('Please provide a valid SRN');
@@ -83,7 +83,7 @@ const PageContainer = styled.div`
   justify-content: center;
   min-height: 100vh;
   background: linear-gradient(to bottom right, #FF6F00, #003366);
-  padding: 20px;
+  padding:20px;
   margin: 0;
   box-sizing: border-box;
 `;
@@ -93,7 +93,10 @@ const VerificationWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  gap: 200px;
+  gap: 160px;
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
 `;
 
 const VerificationContainer = styled.div`
@@ -132,12 +135,17 @@ const Description = styled.p`
   color: #666;
   text-align: center;
   font-size: 1rem;
+  margin-bottom: 15px;
+
+  @media (max-width: 480px) {
+    font-size: 0.875rem;
+  }
 `;
 
 const Input = styled.input`
   margin-bottom: 20px;
   padding: 10px;
-  width: 65%;
+  width: 80%;
   border: 2px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
@@ -146,6 +154,10 @@ const Input = styled.input`
   &:focus {
     border-color: #333;
     outline: none;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
   }
 `;
 
@@ -161,6 +173,10 @@ const Button = styled.button`
 
   &:hover {
     background-color: #555;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
   }
 `;
 
