@@ -70,13 +70,13 @@ const AdditionalContent = styled.div`
 const Footer = () => {
   return (
     <FooterContainer>
-      <img src="/logo-removebg-preview (1).png" alt="connectPES Logo" style={styles.logo} />
-      <p>&copy; {new Date().getFullYear()} connect. All rights reserved</p>
+      <img src="/image (1).png" alt="connectPES Logo" style={styles.logo} />
+      <p>&copy; {new Date().getFullYear()} connectPES. All rights reserved</p>
       <AdditionalContent>
         <div style={styles.links}>
           <a href="https://contributorsconnectpes.netlify.app/" style={styles.link}>Contributors</a>
-          <a href="https://termsconnectpes.netlify.app/" style={styles.link}>Terms of use</a>
-          <a href="https://contactuspes.netlify.app/" style={styles.link}>Contact Us</a>
+          <a href="https://termsconnectpes.netlify.app/" style={styles.link}>Terms of service</a>
+          <a href="https://contactuspes.netlify.app/" style={styles.link}>ContactUs</a>
         </div>
         <p>connectPES: Your go-to platform to connect with alumni of PES University. Stay connected with your queries and concerns and stay in touch!</p>
       </AdditionalContent>
@@ -88,7 +88,7 @@ const styles = {
   links: {
     marginTop: '10px',
     fontFamily: 'Coneria',
-    fontSize:'20px',
+    fontSize:'16px',
   },
   link: {
     margin: '0 10px',
