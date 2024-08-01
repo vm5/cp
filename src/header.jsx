@@ -171,14 +171,14 @@ const Header = () => {
     <HeaderContainer>
       <HeaderContent>
         <LogoContainer>
-          <img src="/logo-removebg-preview (1).png" alt="connectPES Logo" style={styles.logo} />
+          <img src="/image (1).png" alt="connectPES Logo" style={styles.logo} />
         </LogoContainer>
         <SlidingHeading>Welcome to connectPES</SlidingHeading>
         <div style={styles.links}>
           <a href="/" style={styles.link}>Home</a>
           <a href="#bottom" onClick={scrollToBottom} style={styles.link}>Contributors</a>
-          <a href="#bottom" onClick={scrollToBottom} style={styles.link}>Terms of use</a>
-          <a href="#bottom" onClick={scrollToBottom} style={styles.link}>Contact Us</a>
+          <a href="#bottom" onClick={scrollToBottom} style={styles.link}>Terms of service</a>
+          <a href="#bottom" onClick={scrollToBottom} style={styles.link}>ContactUs</a>
         </div>
       </HeaderContent>
       <ContentRow>
